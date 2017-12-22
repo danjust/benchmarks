@@ -5,4 +5,7 @@ COPY tf_cnn_benchmarks/ ./tf_cnn_benchmarks/
 RUN touch tf_cnn_benchmarks/__init__.py
 RUN mkdir ./util/
 COPY util/ ./util/
-ENTRYPOINT ["python", "-m", "tf_cnn_benchmarks.tf_cnn_benchmarks"]
+
+WORKDIR ./tf_cnn_benchmarks/
+
+ENTRYPOINT ["python", "-m", "tf_cnn_benchmarks"]
